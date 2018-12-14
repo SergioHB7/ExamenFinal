@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="background-color: rgb(150, 0, 0)">Productos</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only style="color: white" (click)="carritoClick()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color: rgb(255, 164, 59)">
+
+<ion-card  *ngFor="let p of prods" (click)="productoClick(p)" >
+  <ion-item>
+    <ion-col item-start>
+      <img [src]= p.imagen >
+    </ion-col>
+    <h2> {{p.nombre}} </h2>
+    <p>{{p.precio}}</p>
+  </ion-item>
+</ion-card>
+</ion-content>
